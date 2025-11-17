@@ -15,14 +15,16 @@ Pipeline Flow:
 ## 📂 Project Structure
 ```
 ├── data/
-│   └── raw/
-│   └── processed/
+│   └── raw/dataset_salary_2024_raw.csv
+│   └── processed/data_salary2024_maxbyjobtitle.xlsx
+│   └── processed/data_salary2024_maxbyjoblevel.xlsx
 ├── glue/
 │   └── data-salary-2024-agg.py
 ├── sql/
-│   └── athena_queries.sql
+│   └── dataset-salary-maxbyjobtitle
+│   └── dataset-salary-maxbylevel
 ├── visuals/
-│   └── diagrams/
+│   └── data_salary2024_pbix.pbix
 └── README.md
 ```
 
@@ -36,15 +38,15 @@ Pipeline Flow:
 ## 🔄 ETL Workflow
 ### 1. Data Ingestion
 Raw Kaggle dataset uploaded to S3:
-`s3://amzn-s3-dataset-salary/csv/dataset_salary_2024.csv`
+<p>`s3://amzn-s3-dataset-salary/csv/dataset_salary_2024.csv`</p>
 
 ### 2. Glue Crawler
 Scans raw files → Generates schema → Registers tables in Glue Data Catalog.
 
 ### 3. Glue ETL
 Cleans & transforms data, converts to CSV, writes to:
-`s3://amzn-s3-dataset-salary/product_1`
-`s3://amzn-s3-dataset-salary/product_2`
+<p>`s3://amzn-s3-dataset-salary/product_1`</p>
+<p>`s3://amzn-s3-dataset-salary/product_2`</p>
 
 ### 4. Athena Query Layer
 Runs validation and analytics SQL queries on processed CSV data.
@@ -67,9 +69,8 @@ Power BI connects to Athena via ODBC to visualize metrics and trends.
 - Dashboard design in Power BI
 
 ## ▶️ How to Reproduce
-1. Clone repo
-2. Download Kaggle dataset
-3. Upload to S3
-4. Run Glue Crawler & ETL
-5. Query data in Athena
-6. Build Power BI dashboard
+1. Clone / Download Repo
+2. Upload Raw CSV to S3 
+3. Run Glue Crawler & ETL
+4. Query data in Athena
+5. Build Power BI Dashboard Seperately
