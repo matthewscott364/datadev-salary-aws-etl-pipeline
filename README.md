@@ -20,7 +20,7 @@ Pipeline Flow:
 │   └── processed/data_salary2024_maxbyjoblevel.xlsx
 ├── glue/
 │   └── data-salary-2024-agg.py
-├── sql/
+├── athena/sql/
 │   └── dataset-salary-maxbyjobtitle
 │   └── dataset-salary-maxbylevel
 ├── visuals/
