@@ -38,15 +38,15 @@ Pipeline Flow:
 ## 🔄 ETL Workflow
 ### 1. Data Ingestion
 Raw Kaggle dataset uploaded to S3:
-<p>`s3://amzn-s3-dataset-salary/csv/dataset_salary_2024.csv`</p>
+`s3://amzn-s3-dataset-salary/csv/dataset_salary_2024.csv`
 
 ### 2. Glue Crawler
 Scans raw files → Generates schema → Registers tables in Glue Data Catalog.
 
 ### 3. Glue ETL
 Cleans & transforms data, converts to CSV, writes to:
-<p>`s3://amzn-s3-dataset-salary/product_1`</p>
-<p>`s3://amzn-s3-dataset-salary/product_2`</p>
+`s3://amzn-s3-dataset-salary/product_1`
+`s3://amzn-s3-dataset-salary/product_2`
 
 ### 4. Athena Query Layer
 Runs validation and analytics SQL queries on processed CSV data.
