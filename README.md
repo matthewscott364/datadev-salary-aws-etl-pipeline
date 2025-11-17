@@ -18,7 +18,7 @@ Pipeline Flow:
 │   └── raw/
 │   └── processed/
 ├── glue/
-│   └── etl_script.py
+│   └── data-salary-2024-agg.py
 ├── sql/
 │   └── athena_queries.sql
 ├── visuals/
